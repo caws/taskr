@@ -7,12 +7,26 @@
       <% status.tasks.each do |task| %>
         <div class="card " id="<%= task.id %>" style="margin-bottom: 20px;">
           <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">
+              <%= link_to task, remote: true, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </button>
             <h5 class="card-title"><%= task.title %></h5>
             <p class="card-text"><%= task.body %></p>
-            <%= link_to "Move to doing", root_path, class: "btn-sm btn-primary" %>
-            <%= link_to "Move to To Do", root_path, class: "btn-sm btn-secondary" %>
-            <%= link_to "Move to Done", root_path, class: "btn-sm btn-success" %>
-            <%= link_to 'Destroy', task, class: "btn-sm btn-success", remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+            <%= link_to task_url(task, task: {status_id: 1}), remote: true, method: :put, class: "btn-sm btn-primary m-1", hidden: show_anchors(task).first do %>
+              <i class="fas fa-undo"></i> To Do
+            <% end %>
+
+            <%= link_to task_url(task, task: {status_id: 2}), remote: true, method: :put, class: "btn-sm btn-secondary m-1", hidden: show_anchors(task).second do %>
+              <i class="fas fa-thumbtack"></i> Doing
+            <% end %>
+
+            <%= link_to task_url(task, task: {status_id: 3}), remote: true, method: :put, class: "btn-sm btn-success m-1", hidden: show_anchors(task).third do %>
+              <i class="fas fa-check-double"></i> Done
+            <% end %>
+
             <%= link_to 'Show', task, class: "btn-sm btn-secondary", remote: true  %>
           </div>
         </div>
