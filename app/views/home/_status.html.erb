@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
       <% status.tasks.each do |task| %>
-        <div class="card clickable-card" id="<%= task.id %>" style="margin-bottom: 20px; cursor: pointer">
+        <div class="card " id="<%= task.id %>" style="margin-bottom: 20px;">
           <div class="card-body">
             <h5 class="card-title"><%= task.title %></h5>
             <p class="card-text"><%= task.body %></p>
@@ -13,9 +13,9 @@
             <%= link_to "Move to To Do", root_path, class: "btn-sm btn-secondary" %>
             <%= link_to "Move to Done", root_path, class: "btn-sm btn-success" %>
             <%= link_to 'Destroy', task, class: "btn-sm btn-success", remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Show', task, class: "btn-sm btn-secondary", remote: true  %>
           </div>
         </div>
-        <%= link_to 'Show', task, remote: true,id: "show-#{task.id}" %>
       <% end %>
     </div>
   </div>
@@ -24,7 +24,6 @@
 
 <script>
     $('.clickable-card').on('click', function(event) {
-        id = this.getAttribute("id");
-        console.log("#link-"+id);
+        $('#show-'+this.getAttribute("id"))[0].click();
     });
 </script>
