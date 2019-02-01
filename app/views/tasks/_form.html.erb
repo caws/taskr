@@ -1,4 +1,4 @@
-<%= form_with(model: task, local: true) do |form| %>
+<%= form_with(model: task) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -11,22 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_area :body, class: "form-control", rows: '5' %>
   </div>
 
-  <div class="field">
-    <%= form.label :status_id %>
-    <%= form.text_field :status_id %>
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.collection_select(:status_id, Status.all, :id, :description, {}, {class: "form-control"}) %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group align-content-center">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.submit class: "btn btn-primary btn-block"  %>
+      </div>
+      <div class="col-md-6">
+        <%= button_tag "Close", class:"btn btn-secondary  btn-block" , data: { dismiss:'modal' } %>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -1,0 +1,30 @@
+<% statuses.each do |status| %>
+  <div class="card mb-4 box-shadow h-100">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal"><%= status.description %></h4>
+    </div>
+    <div class="card-body">
+      <% status.tasks.each do |task| %>
+        <div class="card clickable-card" id="<%= task.id %>" style="margin-bottom: 20px; cursor: pointer">
+          <div class="card-body">
+            <h5 class="card-title"><%= task.title %></h5>
+            <p class="card-text"><%= task.body %></p>
+            <%= link_to "Move to doing", root_path, class: "btn-sm btn-primary" %>
+            <%= link_to "Move to To Do", root_path, class: "btn-sm btn-secondary" %>
+            <%= link_to "Move to Done", root_path, class: "btn-sm btn-success" %>
+            <%= link_to 'Destroy', task, class: "btn-sm btn-success", remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+        <%= link_to 'Show', task, remote: true,id: "show-#{task.id}" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+<script>
+    $('.clickable-card').on('click', function(event) {
+        id = this.getAttribute("id");
+        console.log("#link-"+id);
+    });
+</script>

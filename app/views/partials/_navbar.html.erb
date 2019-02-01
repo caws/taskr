@@ -4,9 +4,10 @@
     <%= link_to root_path, class: "p-2 text-dark" do %>
       Home
     <% end %>
-<!--    <a class="p-2 text-dark" href="#">Enterprise</a>-->
-<!--    <a class="p-2 text-dark" href="#">Support</a>-->
-<!--    <a class="p-2 text-dark" href="#">Pricing</a>-->
+    <%#= link_to 'New Task', "#", class: "btn btn-outline-primary", data: {toggle: "modal", target: "#new-task-modal"} %>
+    <%= link_to 'New Task', new_task_path, class: "btn btn-outline-primary", remote: true %>
   </nav>
-  <a class="btn btn-outline-primary" href="#">About this Project</a>
+  <a class="btn btn-outline-secondary" href="#">About this Project</a>
 </div>
+
+<%= render 'partials/bootstrap_modal', heading: "New Task", modal_id: "new-task-modal", modal_body_id: "new-task-modal-body" %>
