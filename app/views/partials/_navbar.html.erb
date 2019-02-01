@@ -1,13 +1,14 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">Taskr</h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <%= link_to root_path, class: "p-2 text-dark" do %>
+    <%= link_to root_path, class: "btn btn-outline-primary" do %>
       Home
     <% end %>
-    <%#= link_to 'New Task', "#", class: "btn btn-outline-primary", data: {toggle: "modal", target: "#new-task-modal"} %>
-    <%= link_to 'New Task', new_task_path, class: "btn btn-outline-primary", remote: true %>
+    <%= link_to 'New Task', new_task_path, class: "btn btn-outline-secondary", remote: true %>
+    <%= link_to about_path, class: "btn btn-outline-info" do  %>
+      About this Project
+    <% end %>
   </nav>
-  <a class="btn btn-outline-secondary" href="#">About this Project</a>
 </div>
 
 <%= render 'partials/bootstrap_modal', heading: "New Task", modal_id: "new-task-modal", modal_body_id: "new-task-modal-body" %>
