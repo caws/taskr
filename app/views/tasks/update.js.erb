@@ -1,4 +1,5 @@
 $('#status-columns').html("<%= j (render 'home/status', statuses: Status.all) %>");
+$('#task-table').html("<%= j (render 'tasks/table', tasks: Task.all) %>");
 $("#show-task-modal").modal('hide');
 $.notify({
     // options

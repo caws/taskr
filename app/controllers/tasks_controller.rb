@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.search(search_params[:term])
   end
 
   # GET /tasks/1
@@ -74,5 +74,9 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:title, :body, :status_id)
+    end
+
+    def search_params
+      params.permit(:term)
     end
 end
