@@ -15,4 +15,5 @@
 //= require activestorage
 //= require bootstrap-notify
 //= require turbolinks
+//= require_tree .
 

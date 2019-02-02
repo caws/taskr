@@ -1,17 +1,3 @@
 $('#status-columns').html("<%= j (render 'home/status', statuses: Status.all) %>");
 $('#task-table').html("<%= j (render 'tasks/table', tasks: Task.all) %>");
 $("#new-task-modal").modal('hide');
-
-$.notify({
-    // options
-    message: 'Task \'<%= @task.title %>\' was created.'
-},{
-    // settings
-    type: 'info',
-    newest_on_top: true,
-    offset: 20,
-    spacing: 10,
-    allow_dismiss: true,
-    template: '<%= notification_template.html_safe %>'
-});
-
