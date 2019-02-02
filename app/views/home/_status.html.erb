@@ -15,19 +15,24 @@
             <h5 class="card-title"><%= task.title %></h5>
             <p class="card-text"><%= task.body %></p>
 
-            <%= link_to task_url(task, task: {status_id: 1}), remote: true, method: :put, class: "btn-sm btn-primary m-1", hidden: show_anchors(task).first do %>
-              <i class="fas fa-undo"></i> To Do
-            <% end %>
+            <div class="text-center">
+              <%= link_to task_url(task, task: {status_id: 1}), remote: true, method: :put, class: "btn-sm btn-primary m-1", hidden: show_anchors(task).first do %>
+                <i class="fas fa-undo"></i> To Do
+              <% end %>
 
-            <%= link_to task_url(task, task: {status_id: 2}), remote: true, method: :put, class: "btn-sm btn-secondary m-1", hidden: show_anchors(task).second do %>
-              <i class="fas fa-thumbtack"></i> Doing
-            <% end %>
+              <%= link_to task_url(task, task: {status_id: 2}), remote: true, method: :put, class: "btn-sm btn-secondary m-1", hidden: show_anchors(task).second do %>
+                <i class="fas fa-thumbtack"></i> Doing
+              <% end %>
 
-            <%= link_to task_url(task, task: {status_id: 3}), remote: true, method: :put, class: "btn-sm btn-success m-1", hidden: show_anchors(task).third do %>
-              <i class="fas fa-check-double"></i> Done
-            <% end %>
+              <%= link_to task_url(task, task: {status_id: 3}), remote: true, method: :put, class: "btn-sm btn-success m-1", hidden: show_anchors(task).third do %>
+                <i class="fas fa-check-double"></i> Done
+              <% end %>
 
-            <%= link_to 'Show', task, class: "btn-sm btn-secondary", remote: true  %>
+              <%= link_to task, class: "btn-sm btn-secondary", remote: true do %>
+                <i class="fas fa-info"></i> Details
+              <% end %>
+            </div>
+
           </div>
         </div>
       <% end %>
@@ -41,3 +46,4 @@
         $('#show-'+this.getAttribute("id"))[0].click();
     });
 </script>
+
