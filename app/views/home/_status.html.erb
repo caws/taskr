@@ -3,7 +3,7 @@
     <div class="card-header">
       <h4 class="my-0 font-weight-normal"><%= status.description %></h4>
     </div>
-    <div class="card-body">
+    <div class="card-body" id="cards-with-status-<%= status.id %>">
       <% status.tasks.each do |task| %>
         <div class="card " id="<%= task.id %>" style="margin-bottom: 20px;">
           <div class="card-body">

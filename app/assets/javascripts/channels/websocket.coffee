@@ -26,5 +26,5 @@ App.web_notifications = App.cable.subscriptions.create "WebsocketChannel",
                                                '<a href=\"{3}\" target=\"{4}\" data-notify=\"url\"></a>' +
                                                '</div>'
 
-
+     when 'update_screen' then $("#status-columns").html(data['data'])
      else console.log("Don't know how to deal with:" + JSON.stringify(data));
