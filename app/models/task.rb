@@ -35,11 +35,12 @@ class Task < ApplicationRecord
   end
 
   def update_screen
-    send_notification('update_screen', "#{self.status.id}", render_data(Status.all))
+    send_notification('update_screen', "#{status.id}", render_data('home/status', 'statuses', Status.all))
+    send_notification('update_tasks', "#{status.id}", render_data('tasks/table', 'tasks', Task.all))
   end
 
-  def render_data(data)
-    ApplicationController.renderer.render(partial: 'home/status', locals: { statuses: data })
+  def render_data(partial_name, key, data)
+    ApplicationController.renderer.render(partial: partial_name, locals: { "#{key}": data })
   end
 
 end

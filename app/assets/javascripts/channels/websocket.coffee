@@ -7,7 +7,6 @@ App.web_notifications = App.cable.subscriptions.create "WebsocketChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    console.log(JSON.stringify(data))
     switch data['type']
      when 'notification' then $.notify { message: data['message'] },
                                  type: 'info'
@@ -27,4 +26,5 @@ App.web_notifications = App.cable.subscriptions.create "WebsocketChannel",
                                                '</div>'
 
      when 'update_screen' then $("#status-columns").html(data['data'])
+     when 'update_tasks' then $("#task-table").html(data['data'])
      else console.log("Don't know how to deal with:" + JSON.stringify(data));
