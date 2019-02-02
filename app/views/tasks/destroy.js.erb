@@ -1,2 +1,14 @@
 $('#status-columns').html("<%= j (render 'home/status', statuses: Status.all) %>");
 
+$.notify({
+    // options
+    message: 'Task \'<%= @task.title %>\' was destroyed.'
+},{
+    // settings
+    type: 'info',
+    newest_on_top: true,
+    offset: 20,
+    spacing: 10,
+    allow_dismiss: true,
+    template: '<%= notification_template.html_safe %>'
+});
