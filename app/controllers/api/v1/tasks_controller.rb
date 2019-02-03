@@ -63,7 +63,6 @@ module Api
       def task_params
         params.permit(:title, :body, :status_id, :id)
       end
-      
     end
   end
 end
