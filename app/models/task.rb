@@ -18,7 +18,7 @@ class Task < ApplicationRecord
     end
   end
 
-  private
+  # private
 
   def send_notification(type, message, data)
     # Adding a guard clause so that notifications aren't
@@ -51,7 +51,7 @@ class Task < ApplicationRecord
 
   def render_data(partial_name, key, data)
     ApplicationController.renderer.render(partial: partial_name,
-                                          locals: { "#{key}": data })
+                                          locals: { "#{key}": data }).gsub('http://example.org', '')
   end
 
 end
