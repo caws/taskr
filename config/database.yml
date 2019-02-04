@@ -20,6 +20,9 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# Using postgres so that heroku won't go insane
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: caws_taskr_production
+  username: caws_taskr
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
