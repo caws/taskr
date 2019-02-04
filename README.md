@@ -28,9 +28,9 @@ API endpoints:
 | :---: | :---: | :---: |
 | Return tasks| GET | /api/v1/tasks  |
 | Create task | POST | /api/v1/tasks  |
-| Return task of id = 1 | GET | /api/v1/tasks/1  |
-| Update task of id = 1 | PATCH/PUT | /api/v1/tasks/1  |
-| Delete task of id = 1 | DELETE | /api/v1/tasks/1  |
+| Return task with id = 1 | GET | /api/v1/tasks/1  |
+| Update task with id = 1 | PATCH/PUT | /api/v1/tasks/1  |
+| Delete task with id = 1 | DELETE | /api/v1/tasks/1  |
 
 ## Getting Started
 
@@ -48,10 +48,13 @@ Ruby 2.5.1
 ## Built With
 
 * [Action Cable](https://github.com/rails/rails/tree/master/actioncable)
+* [Bootstrap](https://github.com/twbs/bootstrap) 
+* [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 * [Notify.js](https://notifyjs.jpillora.com/)
 * [Rails](https://github.com/rails/rails)
 * [Rspec](https://github.com/rspec/rspec-rails)
 * [ServiceWorker::Rails](https://github.com/rossta/serviceworker-rails)
+ 
 
 ## Author
 
