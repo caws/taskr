@@ -1,9 +1,9 @@
-# Taskr - A kanban-like todo sample application on Rails
+# Taskr - A kanban-like todo example application on Rails
 
 ![Alt Text](https://i.imgur.com/N51MOOd.gif)
 
-This is a sample project.
-I figured it would be cool to code a Ruby on Rails sample project employing a few interesting (at least to me) RoR concepts. 
+This is an example project.
+I figured it would be cool to code a Ruby on Rails example project employing a few interesting (at least to me) RoR concepts. 
 The basic idea behind it is to provide a platform that lets multiple users CRUD tasks while keeping everyone's screens updated.
 
 
