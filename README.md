@@ -35,6 +35,7 @@ API endpoints:
 ## Getting Started
 
 * Clone the project
+* rake:db create db:migrate db:seed
 * bundle install
 * rails s
 
