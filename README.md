@@ -1,9 +1,11 @@
-# Taskr - A Todo sample application on Rails
+# Taskr - A kanban-like todo sample application on Rails
+
+![Alt Text](https://i.imgur.com/N51MOOd.gif)
 
 This is a sample project.
 I figured it would be cool to code a Ruby on Rails sample project employing a few interesting (at least to me) RoR concepts. 
 The basic idea behind it is to provide a platform that lets multiple users CRUD tasks while keeping everyone's screens updated.
-  
+
 
 What's in this solution:
 
@@ -19,6 +21,16 @@ What's in this solution:
 
 Extra stuff:
 * Notifications using [Notify.js](https://notifyjs.jpillora.com/) (triggered via WebSocket actions)
+
+API endpoints:
+
+| Result | Request Type | URL |
+| :---: | :---: | :---: |
+| Return tasks| GET | /api/v1/tasks  |
+| Create task | POST | /api/v1/tasks  |
+| Return task of id = 1 | GET | /api/v1/tasks/1  |
+| Update task of id = 1 | PATCH/PUT | /api/v1/tasks/1  |
+| Delete task of id = 1 | DELETE | /api/v1/tasks/1  |
 
 ## Getting Started
 
