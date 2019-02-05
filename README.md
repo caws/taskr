@@ -54,7 +54,7 @@ Ruby 2.5.1
 * [Notify.js](https://notifyjs.jpillora.com/)
 * [Rails](https://github.com/rails/rails)
 * [Rspec](https://github.com/rspec/rspec-rails)
-* [ServiceWorker::Rails](https://github.com/rossta/serviceworker-rails)
+* [Redis](https://redis.io/)
  
 
 ## Author
