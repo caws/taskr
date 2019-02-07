@@ -1,3 +1,4 @@
+require 'rails_helper'
 RSpec.describe Api::V1::TasksController do
   test_status = Status.find_or_create_by!(description: 'Test status')
   test_task = Task.find_or_create_by!(title: 'Test title', body: 'Test body', status: test_status )
