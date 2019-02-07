@@ -1,0 +1,5 @@
+$('#show-task-modal-body').html("<%= j (render 'form', task: @task) %>");
+
+<% if !@task.errors.any? %>
+  $("#show-task-modal-body").modal();
+<% end %>
